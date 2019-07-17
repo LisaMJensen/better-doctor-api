@@ -1,9 +1,9 @@
 export class DoctorService {
 
-  getDoctorByName(name) {
+  getDoctorBySearch(name, medicalIssue) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://CORS-anywhere.herokuapp.com/https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=wa-seattle&skip=0&limit=10&user_key=34853a487b63d7e734401c6341ae74f8`;
+      const url = `https://CORS-anywhere.herokuapp.com/https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&query=${medicalIssue}&location=wa-seattle&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);

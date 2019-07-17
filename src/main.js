@@ -10,18 +10,18 @@ $(document).ready(function() {
     event.preventDefault();
       let name = $('#enteredName').val();
       $('#enteredName').val("");
-
-      // let query = $('#enteredQuery').val();
-      // $('#enteredQuery').val("");
+      let medicalIssue = $('#enteredMedicalIssue').val();
+      $('#enteredMedicalIssue').val("");
 
 
         let doctorSearch = new DoctorService();
 
-        let promise = doctorSearch.getDoctorByName(name);
+        let promise = doctorSearch.getDoctorBySearch(name, medicalIssue);
         promise.then(function(response) {
 
         let doctorProfile = JSON.parse(response);
         console.log(name);
+        // console.log(medicalIssue);
         console.log(doctorSearch);
         console.log(doctorProfile.data.length);
 
