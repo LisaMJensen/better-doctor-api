@@ -16,7 +16,7 @@ _This web application utilizes the BetterDoctor API to search by doctors name fo
 
 ## Known Bugs
 
-_Functionality to search by medical issue rather than name has not been fully implemented._
+_There are no known bugs at this time._
 
 ## Support and contact details
 
